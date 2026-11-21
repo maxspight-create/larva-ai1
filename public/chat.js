@@ -76,10 +76,13 @@ async function sendMessage() {
 		chatMessages.scrollTop = chatMessages.scrollHeight;
 
 		// Send request to API
-		const response = await fetch("/api/chat", {
+		const response = await fetch("https://ddbfzvuijpfzzmhphsme.supabase.co/functions/v1/larva-chat", {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json",
+    "Content-Type": "application/json",
+    "apikey": "sb_publishable_qCCKl8tH7I2FFcx3GACHUA_tgWMH08y",
+},
+				
 			},
 			body: JSON.stringify({
 				messages: chatHistory,
